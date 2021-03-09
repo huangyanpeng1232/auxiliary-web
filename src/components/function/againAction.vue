@@ -1,9 +1,9 @@
 <template>
-  <div id="toElec">
+  <div id="againAction">
     <div class="container mainDiv">
       <div class="row">
         <div class="col-md-4 col-md-offset-4 text-center">
-          <h2>强制转换电子化回访</h2>
+          <h2>新契约重新进挡</h2>
         </div>
       </div>
       <div class="row">
@@ -23,7 +23,7 @@
               <input type="text" id="dataGuid" class="form-control" placeholder="保单主键">
             </div>
             <div class="form-group">
-              <input type="button" @click="toElec()" value="转电子化回访" class="form-control btn btn-info">
+              <input type="button" @click="againAction()" value="重新进挡" class="form-control btn btn-info">
             </div>
           </div>
         </div>
@@ -42,19 +42,19 @@ import $ from 'jquery';
 import axis from "axios";
 import backHome from '../backHome';
 import Alert from '../Alert';
-
 export default {
-  name: "toElec",
+  name: "againAction",
   data(){
     return{
       resultText:''
-   }
+    }
   },
   components:{
     backHome,
     Alert
-  },methods:{
-    toElec:function (){
+  },
+  methods:{
+    againAction:function (){
       let environment = $('#environment').val();
       let productNo = $('#productNo').val();
       let dataGuid = $('#dataGuid').val();
@@ -70,16 +70,16 @@ export default {
         'productNo':productNo
       }
 
-      this.resultText = '正在转换...';
-      axis.post('/api/elec/toElec',reqdata).then(response => {
+      this.resultText = '正在重新进挡...';
+      axis.post('/api/action/againAction',reqdata).then(response => {
 
         if(response.status == 200 && response.data.status == 'succeed'){
-          this.resultText = '转换成功';
+          this.resultText = '重新进挡成功';
         }else {
           if(response.data.message != null){
             this.resultText = response.data.message;
           }else{
-            this.resultText = '系统异常'
+            this.resultText = '系统异常';
           }
         }
       })

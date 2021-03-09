@@ -12,9 +12,9 @@
           <div class="form-horizontal">
             <div class="form-group">
               <select id="environment" class="form-control">
-                  <option value="sit">sit</option>
-                  <option value="uat">uat</option>
-                  <option value="stg">stg</option>
+                  <option value="sit">SIT</option>
+                  <option value="uat">UAT</option>
+                  <option value="stg">STG</option>
               </select>
             </div>
 

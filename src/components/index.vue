@@ -41,8 +41,8 @@ export default {
         },
         {
           title: '新契约保单重新进挡',
-          uri: '',
-          details: '针对保单数据异常、记录异常等情况，可以使用重新进挡功能回复数据原始状态',
+          uri: '/againAction',
+          details: '针对保单数据异常、记录异常等情况，可以使用重新进挡功能恢复数据原始状态',
           imgUrl: 'https://auxiliary-web.oss-cn-beijing.aliyuncs.com/actions/img003.jpg'
         },
         {
@@ -58,9 +58,9 @@ export default {
           imgUrl: 'https://auxiliary-web.oss-cn-beijing.aliyuncs.com/actions/img005.jpg'
         },
         {
-          title: '此方法可以手动运行批处理、动态触发正在运行中的程序逻辑',
-          uri: '',
-          details: '此功能可以重启sit、uat、stg测试环境。慎用！',
+          title: '手动触发批处理',
+          uri: '/runFunction',
+          details: '此方法可以手动运行批处理、动态触发正在运行中的程序逻辑',
           imgUrl: 'https://auxiliary-web.oss-cn-beijing.aliyuncs.com/actions/img006.jpg'
         },
         {
@@ -71,7 +71,7 @@ export default {
         },
         {
           title: '批量获取电子化回访链接',
-          uri: '',
+          uri: '/getAvailableElecPath',
           details: '快速获取测试环境可以进行电子化回访的保单回访链接',
           imgUrl: 'https://auxiliary-web.oss-cn-beijing.aliyuncs.com/actions/img008.jpg'
         }
@@ -85,5 +85,11 @@ export default {
 @import "../assets/index/css/style.css";
 body{
   background-color: rgb(250,250,250);
+}
+.case-example-item:hover{
+  box-shadow: 4px 4px 6px #bbb;
+}
+.case-index-title h2{
+  letter-spacing: 10px;
 }
 </style>

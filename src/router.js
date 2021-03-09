@@ -9,6 +9,9 @@ import index from "./components/index";
 import getElecUrl from "./components/function/getElecUrl";
 import toElec from "./components/function/toElec";
 import modifyUserInfo from "./components/function/modifyUserInfo";
+import againAction from "./components/function/againAction";
+import runFunction from "./components/function/runFunction";
+import getAvailableElecPath from "./components/function/getAvailableElecPath";
 
 const routes = [
     {
@@ -26,6 +29,18 @@ const routes = [
     {
         path:"/modifyUserInfo",
         component: modifyUserInfo
+    },
+    {
+        path:"/againAction",
+        component: againAction
+    },
+    {
+        path:"/runFunction",
+        component: runFunction
+    },
+    {
+        path:"/getAvailableElecPath",
+        component: getAvailableElecPath
     }
 ]
 
