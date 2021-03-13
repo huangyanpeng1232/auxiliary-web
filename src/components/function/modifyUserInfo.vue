@@ -58,7 +58,6 @@
 
 <script>
 import $ from 'jquery';
-import axis from "axios";
 import backHome from '../backHome';
 import Alert from '../Alert';
 
@@ -102,7 +101,7 @@ export default {
         'name':name
       }
       this.resultText = '正在修改...'
-      axis.post('/api/elec/modifyUserInfo',reqdata).then(response => {
+      this.$axios.post('/elec/modifyUserInfo',reqdata).then(response => {
         if(response.status == 200 && response.data.status == 'succeed'){
           this.resultText = '修改成功';
         }else {

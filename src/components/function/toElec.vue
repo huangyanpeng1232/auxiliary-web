@@ -39,7 +39,6 @@
 
 <script>
 import $ from 'jquery';
-import axis from "axios";
 import backHome from '../backHome';
 import Alert from '../Alert';
 
@@ -71,7 +70,7 @@ export default {
       }
 
       this.resultText = '正在转换...';
-      axis.post('/api/elec/toElec',reqdata).then(response => {
+      this.$axios.post('/elec/toElec',reqdata).then(response => {
 
         if(response.status == 200 && response.data.status == 'succeed'){
           this.resultText = '转换成功';

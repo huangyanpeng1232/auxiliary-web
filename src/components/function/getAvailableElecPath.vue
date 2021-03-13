@@ -50,7 +50,6 @@
 
 <script>
 import $ from 'jquery';
-import axis from "axios";
 import backHome from '../backHome';
 import Alert from '../Alert';
 
@@ -87,7 +86,7 @@ export default {
       }
 
       this.resultText = '正在获取...';
-      axis.post('/api/elec/getAvailableElecPath',reqdata).then(response => {
+      this.$axios.post('/elec/getAvailableElecPath',reqdata).then(response => {
 
         if(response.status == 200 && response.data.status == 'succeed'){
 

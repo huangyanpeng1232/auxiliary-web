@@ -3,7 +3,7 @@
     <div class="container mainDiv">
       <div class="row">
         <div class="col-md-4 col-md-offset-4 text-center">
-          <h2>手动执行批处理</h2>
+          <h2>手动触发批处理</h2>
         </div>
       </div>
       <div class="row">
@@ -38,7 +38,6 @@
 
 <script>
 import $ from 'jquery';
-import axis from "axios";
 import backHome from '../backHome';
 import Alert from '../Alert';
 
@@ -55,7 +54,7 @@ export default {
     Alert
   },
   created() {
-    axis.post('/api/runFunction/getRunFunctionList').then(response => {
+    this.$axios.post('/runFunction/getRunFunctionList').then(response => {
 
       if(response.status == 200 && response.data.status == 'succeed'){
         this.functionList = eval(response.data.functionList);
@@ -84,7 +83,7 @@ export default {
       }
 
       this.resultText = '请稍等...';
-      axis.post('/api/runFunction/runFunction',reqdata).then(response => {
+      this.$axios.post('/runFunction/runFunction',reqdata).then(response => {
         if(response.status == 200 && response.data.status == 'succeed'){
           this.resultText = '执行成功';
         }else {
